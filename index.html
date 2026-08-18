@@ -17,7 +17,10 @@
 
 <body>
 
-    <!-- BACKGROUND -->
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
     <div class="stars" id="stars"></div>
 
     <div class="moon"></div>
@@ -110,6 +113,8 @@
         <div class="page2-content">
 
 
+            <!-- JUDUL -->
+
             <div class="page-title">
 
                 <p>
@@ -125,7 +130,7 @@
             </div>
 
 
-            <!-- FOTO + TEKS -->
+            <!-- FOTO 1 -->
 
             <div class="memory-row left">
 
@@ -158,6 +163,8 @@
 
 
 
+            <!-- FOTO 2 -->
+
             <div class="memory-row right">
 
                 <div class="memory-photo">
@@ -189,6 +196,8 @@
 
 
 
+            <!-- FOTO 3 -->
+
             <div class="memory-row left">
 
                 <div class="memory-photo">
@@ -218,6 +227,8 @@
             </div>
 
 
+
+            <!-- FOTO 4 -->
 
             <div class="memory-row right">
 
@@ -249,6 +260,8 @@
 
 
 
+            <!-- TOMBOL PAGE 2 -->
+
             <div class="next-area">
 
                 <p>
@@ -260,6 +273,20 @@
                     onclick="goPage3()"
                 >
                     Lanjut ✨
+                </button>
+
+            </div>
+
+
+            <!-- KEMBALI KE PAGE 1 -->
+
+            <div class="back-area">
+
+                <button
+                    class="back-button"
+                    onclick="showPage('page1')"
+                >
+                    ← Kembali
                 </button>
 
             </div>
@@ -279,6 +306,8 @@
         <div class="planet-page">
 
 
+            <!-- JUDUL -->
+
             <div class="planet-title">
 
                 <p>
@@ -295,6 +324,8 @@
             <!-- PLANET -->
 
             <div class="space-scene">
+
+                <!-- PLANET DIAM -->
 
                 <div class="planet">
 
@@ -315,88 +346,110 @@
                     <!-- FOTO -->
 
                     <div class="orbit-photo p1">
+
                         <img
                             src="assets/foto my bini 6.jpg"
                             alt=""
                         >
+
                     </div>
 
 
                     <div class="orbit-photo p2">
+
                         <img
                             src="assets/foto my bini 7.jpg"
                             alt=""
                         >
+
                     </div>
 
 
                     <div class="orbit-photo p3">
+
                         <img
                             src="assets/foto my bini 8.jpg"
                             alt=""
                         >
+
                     </div>
 
 
                     <div class="orbit-photo p4">
+
                         <img
                             src="assets/foto my bini 9.jpg"
                             alt=""
                         >
+
                     </div>
 
 
                     <div class="orbit-photo p5">
+
                         <img
                             src="assets/foto my bini 10.jpg"
                             alt=""
                         >
+
                     </div>
 
 
                     <div class="orbit-photo p6">
+
                         <img
                             src="assets/foto my bini 11.jpg"
                             alt=""
                         >
+
                     </div>
 
 
                     <div class="orbit-photo p7">
+
                         <img
                             src="assets/foto my bini 12.jpg"
                             alt=""
                         >
+
                     </div>
 
 
                     <div class="orbit-photo p8">
+
                         <img
                             src="assets/foto my bini 13.jpg"
                             alt=""
                         >
+
                     </div>
 
 
                     <div class="orbit-photo p9">
+
                         <img
                             src="assets/foto my bini 14.jpg"
                             alt=""
                         >
+
                     </div>
 
 
                     <div class="orbit-photo p10">
+
                         <img
                             src="assets/foto my bini 15.jpg"
                             alt=""
                         >
+
                     </div>
 
                 </div>
 
             </div>
 
+
+            <!-- PESAN TERAKHIR -->
 
             <div class="last-message">
 
@@ -405,6 +458,20 @@
                     <br>
                     Semoga semesta selalu berpihak kepadamu ✨
                 </p>
+
+            </div>
+
+
+            <!-- KEMBALI KE PAGE 2 -->
+
+            <div class="back-area">
+
+                <button
+                    class="back-button"
+                    onclick="showPage('page2')"
+                >
+                    ← Kembali
+                </button>
 
             </div>
 
@@ -420,19 +487,19 @@
 
     <script>
 
+        /* =================================================
+           MUSIK
+        ================================================= */
+
         const music =
             document.getElementById("music");
 
-
-        /*
-         * VOLUME MUSIK
-         */
 
         music.volume = 0.7;
 
 
         /*
-         * COBA AUTOPLAY
+         * Coba autoplay ketika halaman dibuka.
          */
 
         window.addEventListener(
@@ -452,21 +519,39 @@
 
 
         /*
-         * KLIK AMPLOP
+         * Kalau autoplay diblokir,
+         * musik mulai saat user melakukan klik.
          */
+
+        document.addEventListener(
+            "click",
+            () => {
+
+                music.play().catch(() => {});
+
+            },
+            {
+                once: true
+            }
+        );
+
+
+
+        /* =================================================
+           AMPLOP
+        ================================================= */
 
         function openEnvelope() {
 
             /*
-             * Pastikan musik dimainkan
-             * setelah user berinteraksi.
+             * Pastikan musik mulai.
              */
 
             music.play().catch(() => {});
 
 
             /*
-             * Animasi amplop
+             * Jalankan animasi amplop.
              */
 
             document.body.classList.add(
@@ -475,7 +560,8 @@
 
 
             /*
-             * Pindah ke Page 2
+             * Setelah animasi selesai,
+             * masuk Page 2.
              */
 
             setTimeout(
@@ -490,9 +576,10 @@
         }
 
 
-        /*
-         * PAGE 2 → PAGE 3
-         */
+
+        /* =================================================
+           PAGE 2 → PAGE 3
+        ================================================= */
 
         function goPage3() {
 
@@ -501,11 +588,16 @@
         }
 
 
-        /*
-         * PINDAH PAGE
-         */
+
+        /* =================================================
+           SISTEM PINDAH PAGE
+        ================================================= */
 
         function showPage(id) {
+
+            /*
+             * Sembunyikan semua page.
+             */
 
             document
                 .querySelectorAll(".page")
@@ -520,20 +612,53 @@
                 );
 
 
-            const page =
+            /*
+             * Tampilkan page tujuan.
+             */
+
+            const target =
                 document.getElementById(id);
 
 
-            page.classList.add(
+            target.classList.add(
                 "active"
             );
+
+
+            /*
+             * Kalau kembali ke Page 1,
+             * posisi amplop di-reset.
+             */
+
+            if (id === "page1") {
+
+                document.body.classList.remove(
+                    "envelope-opened"
+                );
+
+            }
+
+
+            /*
+             * Page 2 kembali ke bagian paling atas.
+             */
+
+            if (id === "page2") {
+
+                const page2 =
+                    document.getElementById("page2");
+
+                page2.scrollTop = 0;
+
+            }
 
         }
 
 
-        /*
-         * BUAT BINTANG
-         */
+
+        /* =================================================
+           BINTANG
+        ================================================= */
 
         const stars =
             document.getElementById("stars");
@@ -560,12 +685,14 @@
             star.style.width =
                 size + "px";
 
+
             star.style.height =
                 size + "px";
 
 
             star.style.left =
                 Math.random() * 100 + "%";
+
 
             star.style.top =
                 Math.random() * 100 + "%";
@@ -578,27 +705,6 @@
             stars.appendChild(star);
 
         }
-
-
-        /*
-         * FALLBACK AUTOPLAY
-         *
-         * Kalau browser memblokir autoplay,
-         * musik akan mulai ketika user
-         * melakukan klik pertama.
-         */
-
-        document.addEventListener(
-            "click",
-            () => {
-
-                music.play().catch(() => {});
-
-            },
-            {
-                once: true
-            }
-        );
 
     </script>
 
