@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Untukmu ✨</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="stars" id="stars"></div>
+
+    <div class="moon"></div>
+
+
+    <!-- =====================================================
+         MUSIK
+    ====================================================== -->
+
+    <audio
+        id="music"
+        loop
+        autoplay
+        preload="auto"
+    >
+        <source
+            src="assets/cintanya aku.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <!-- =====================================================
+         PAGE 1
+    ====================================================== -->
+
+    <section id="page1" class="page active">
+
+        <div class="opening">
+
+            <p class="little-text">
+                ✨ A little surprise for you ✨
+            </p>
+
+            <h1>
+                Ada sesuatu untukmu...
+            </h1>
+
+
+            <!-- AMPLOP -->
+
+            <div
+                class="envelope"
+                onclick="openEnvelope()"
+            >
+
+                <div class="envelope-back"></div>
+
+
+                <!-- FOTO DI DALAM AMPLOP -->
+
+                <div class="photo-inside">
+
+                    <img
+                        src="assets/foto my bini 1.jpg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="envelope-front"></div>
+
+                <div class="flap"></div>
+
+
+                <div class="heart">
+                    💌
+                </div>
+
+            </div>
+
+
+            <p class="hint">
+                ✨ Klik amplop untuk membuka ✨
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PAGE 2
+    ====================================================== -->
+
+    <section id="page2" class="page">
+
+        <div class="page2-content">
+
+
+            <div class="page-title">
+
+                <p>
+                    ✨ A little message for you ✨
+                </p>
+
+                <h1>
+                    Happy Birthday
+                    <br>
+                    My Princess 🥰
+                </h1>
+
+            </div>
+
+
+            <!-- FOTO + TEKS -->
+
+            <div class="memory-row left">
+
+                <div class="memory-photo">
+
+                    <img
+                        src="assets/foto my bini 2.jpg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <h2>
+                        Untuk Kamu 💕
+                    </h2>
+
+                    <p>
+                        Selamat ulang tahun untuk kamu.
+                        Semoga hari spesial ini membawa
+                        banyak kebahagiaan dan senyum
+                        yang nggak ada habisnya.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="memory-row right">
+
+                <div class="memory-photo">
+
+                    <img
+                        src="assets/foto my bini 3.jpg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <h2>
+                        Hari Spesialmu ✨
+                    </h2>
+
+                    <p>
+                        Semoga semua impian dan keinginan
+                        kamu bisa tercapai satu per satu.
+                        Semoga setiap langkahmu selalu
+                        dipermudah.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="memory-row left">
+
+                <div class="memory-photo">
+
+                    <img
+                        src="assets/foto my bini 4.jpg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <h2>
+                        Selalu Bahagia 🥰
+                    </h2>
+
+                    <p>
+                        Semoga hari-harimu selalu dipenuhi
+                        hal-hal baik. Tetap menjadi seseorang
+                        yang selalu punya alasan untuk tersenyum.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="memory-row right">
+
+                <div class="memory-photo">
+
+                    <img
+                        src="assets/foto my bini 5.jpg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <h2>
+                        Untuk Selamanya 💖
+                    </h2>
+
+                    <p>
+                        Semoga panjang umur, sehat selalu,
+                        rezekinya lancar terus dan selalu
+                        dikelilingi orang-orang baik.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="next-area">
+
+                <p>
+                    Masih ada satu kejutan lagi... 🌌
+                </p>
+
+                <button
+                    class="next-button"
+                    onclick="goPage3()"
+                >
+                    Lanjut ✨
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PAGE 3
+    ====================================================== -->
+
+    <section id="page3" class="page">
+
+        <div class="planet-page">
+
+
+            <div class="planet-title">
+
+                <p>
+                    ✨ One last thing for you ✨
+                </p>
+
+                <h1>
+                    My Little Universe 🪐
+                </h1>
+
+            </div>
+
+
+            <!-- PLANET -->
+
+            <div class="space-scene">
+
+                <div class="planet">
+
+                    <div class="planet-highlight"></div>
+
+                </div>
+
+
+                <!-- CINCIN -->
+
+                <div class="ring-system">
+
+                    <div class="ring-main"></div>
+
+                    <div class="ring-inner"></div>
+
+
+                    <!-- FOTO -->
+
+                    <div class="orbit-photo p1">
+                        <img
+                            src="assets/foto my bini 6.jpg"
+                            alt=""
+                        >
+                    </div>
+
+
+                    <div class="orbit-photo p2">
+                        <img
+                            src="assets/foto my bini 7.jpg"
+                            alt=""
+                        >
+                    </div>
+
+
+                    <div class="orbit-photo p3">
+                        <img
+                            src="assets/foto my bini 8.jpg"
+                            alt=""
+                        >
+                    </div>
+
+
+                    <div class="orbit-photo p4">
+                        <img
+                            src="assets/foto my bini 9.jpg"
+                            alt=""
+                        >
+                    </div>
+
+
+                    <div class="orbit-photo p5">
+                        <img
+                            src="assets/foto my bini 10.jpg"
+                            alt=""
+                        >
+                    </div>
+
+
+                    <div class="orbit-photo p6">
+                        <img
+                            src="assets/foto my bini 11.jpg"
+                            alt=""
+                        >
+                    </div>
+
+
+                    <div class="orbit-photo p7">
+                        <img
+                            src="assets/foto my bini 12.jpg"
+                            alt=""
+                        >
+                    </div>
+
+
+                    <div class="orbit-photo p8">
+                        <img
+                            src="assets/foto my bini 13.jpg"
+                            alt=""
+                        >
+                    </div>
+
+
+                    <div class="orbit-photo p9">
+                        <img
+                            src="assets/foto my bini 14.jpg"
+                            alt=""
+                        >
+                    </div>
+
+
+                    <div class="orbit-photo p10">
+                        <img
+                            src="assets/foto my bini 15.jpg"
+                            alt=""
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="last-message">
+
+                <p>
+                    Selamat ulang tahun, Princess 💕
+                    <br>
+                    Semoga semesta selalu berpihak kepadamu ✨
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        const music =
+            document.getElementById("music");
+
+
+        /*
+         * VOLUME MUSIK
+         */
+
+        music.volume = 0.7;
+
+
+        /*
+         * COBA AUTOPLAY
+         */
+
+        window.addEventListener(
+            "load",
+            () => {
+
+                music.play().catch(() => {
+
+                    console.log(
+                        "Autoplay diblokir browser."
+                    );
+
+                });
+
+            }
+        );
+
+
+        /*
+         * KLIK AMPLOP
+         */
+
+        function openEnvelope() {
+
+            /*
+             * Pastikan musik dimainkan
+             * setelah user berinteraksi.
+             */
+
+            music.play().catch(() => {});
+
+
+            /*
+             * Animasi amplop
+             */
+
+            document.body.classList.add(
+                "envelope-opened"
+            );
+
+
+            /*
+             * Pindah ke Page 2
+             */
+
+            setTimeout(
+                () => {
+
+                    showPage("page2");
+
+                },
+                1300
+            );
+
+        }
+
+
+        /*
+         * PAGE 2 → PAGE 3
+         */
+
+        function goPage3() {
+
+            showPage("page3");
+
+        }
+
+
+        /*
+         * PINDAH PAGE
+         */
+
+        function showPage(id) {
+
+            document
+                .querySelectorAll(".page")
+                .forEach(
+                    page => {
+
+                        page.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+            const page =
+                document.getElementById(id);
+
+
+            page.classList.add(
+                "active"
+            );
+
+        }
+
+
+        /*
+         * BUAT BINTANG
+         */
+
+        const stars =
+            document.getElementById("stars");
+
+
+        for (
+            let i = 0;
+            i < 160;
+            i++
+        ) {
+
+            const star =
+                document.createElement("span");
+
+
+            star.className =
+                "star";
+
+
+            const size =
+                Math.random() * 3 + 1;
+
+
+            star.style.width =
+                size + "px";
+
+            star.style.height =
+                size + "px";
+
+
+            star.style.left =
+                Math.random() * 100 + "%";
+
+            star.style.top =
+                Math.random() * 100 + "%";
+
+
+            star.style.animationDelay =
+                Math.random() * 5 + "s";
+
+
+            stars.appendChild(star);
+
+        }
+
+
+        /*
+         * FALLBACK AUTOPLAY
+         *
+         * Kalau browser memblokir autoplay,
+         * musik akan mulai ketika user
+         * melakukan klik pertama.
+         */
+
+        document.addEventListener(
+            "click",
+            () => {
+
+                music.play().catch(() => {});
+
+            },
+            {
+                once: true
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

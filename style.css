@@ -1,0 +1,1284 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background:
+        radial-gradient(
+            ellipse at bottom,
+            #182640 0%,
+            #090d18 55%,
+            #020309 100%
+        );
+
+    color: #fff;
+
+    font-family: "Poppins", sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   STAR BACKGROUND
+========================================================= */
+
+.stars {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    background: #fff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 6px rgba(255,255,255,.9);
+
+    animation:
+        twinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+
+    0% {
+        opacity: .2;
+        transform: scale(.7);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   MOON
+========================================================= */
+
+.moon {
+    position: fixed;
+
+    width: 90px;
+    height: 90px;
+
+    top: 8%;
+    right: 10%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #ffffff,
+            #e9ebff 55%,
+            #9da6d0
+        );
+
+    box-shadow:
+        0 0 35px
+        rgba(220,225,255,.55);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
+
+.page {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+}
+
+.page.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   PAGE 1
+========================================================= */
+
+#page1 {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.opening {
+    width: 90%;
+
+    max-width: 650px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.little-text {
+    color: #cbd3ff;
+
+    font-size: .9rem;
+
+    margin-bottom: 12px;
+}
+
+.opening h1 {
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(2.5rem, 8vw, 4.5rem);
+
+    color: #ffd6f5;
+
+    line-height: 1.15;
+
+    margin-bottom: 45px;
+
+    text-shadow:
+        0 0 12px rgba(255,180,235,.7),
+        0 0 30px rgba(170,100,255,.35);
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.envelope {
+    position: relative;
+
+    width: 280px;
+    height: 190px;
+
+    margin:
+        auto auto 25px;
+
+    cursor: pointer;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform .35s ease;
+}
+
+.envelope:hover {
+    transform:
+        translateY(-7px)
+        scale(1.03);
+}
+
+
+/* BACK */
+
+.envelope-back {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #bd7bda,
+            #66418e
+        );
+
+    box-shadow:
+        0 20px 40px
+        rgba(0,0,0,.45);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PHOTO INSIDE ENVELOPE
+========================================================= */
+
+.photo-inside {
+    position: absolute;
+
+    left: 50%;
+    bottom: 10px;
+
+    width: 150px;
+    height: 170px;
+
+    padding: 5px;
+
+    background: #fff;
+
+    transform:
+        translateX(-50%)
+        translateY(45px);
+
+    opacity: 0;
+
+    z-index: 2;
+
+    transition:
+        opacity .7s ease,
+        transform 1s ease;
+}
+
+.photo-inside img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   ENVELOPE FRONT
+========================================================= */
+
+.envelope-front {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 115px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #925bb9,
+            #59377e
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 62%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
+    border-radius:
+        0 0 8px 8px;
+
+    z-index: 4;
+}
+
+
+/* =========================================================
+   ENVELOPE FLAP
+========================================================= */
+
+.flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 105px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d18ce5,
+            #8050a8
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transform-origin:
+        top center;
+
+    transition:
+        transform 1s ease;
+
+    z-index: 6;
+}
+
+
+/* =========================================================
+   HEART
+========================================================= */
+
+.heart {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size: 42px;
+
+    z-index: 8;
+
+    transition:
+        opacity .3s ease;
+}
+
+
+/* =========================================================
+   ENVELOPE OPEN
+========================================================= */
+
+.envelope-opened .flap {
+    transform:
+        rotateX(180deg);
+}
+
+.envelope-opened .photo-inside {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(-42px);
+}
+
+.envelope-opened .heart {
+    opacity: 0;
+}
+
+
+/* =========================================================
+   HINT
+========================================================= */
+
+.hint {
+    color: #aeb7df;
+
+    font-size: .8rem;
+
+    animation:
+        pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: .4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   PAGE 2
+========================================================= */
+
+#page2 {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding:
+        70px 20px 100px;
+}
+
+.page2-content {
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+
+/* TITLE */
+
+.page-title {
+    text-align: center;
+
+    margin-bottom: 100px;
+}
+
+.page-title p {
+    color: #cbd3ff;
+
+    margin-bottom: 10px;
+}
+
+.page-title h1 {
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(2.5rem, 7vw, 4rem);
+
+    line-height: 1.15;
+
+    color: #ffd6f5;
+
+    text-shadow:
+        0 0 15px
+        rgba(255,180,235,.6);
+}
+
+
+/* =========================================================
+   MEMORY ROW
+========================================================= */
+
+.memory-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 70px;
+
+    width: 100%;
+
+    margin-bottom: 120px;
+}
+
+
+/* FOTO KIRI */
+
+.memory-row.left {
+    flex-direction: row;
+}
+
+
+/* FOTO KANAN */
+
+.memory-row.right {
+    flex-direction: row-reverse;
+}
+
+
+/* =========================================================
+   MEMORY PHOTO
+========================================================= */
+
+.memory-photo {
+    width: 45%;
+
+    max-width: 390px;
+
+    flex-shrink: 0;
+}
+
+.memory-photo img {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    display: block;
+
+    padding: 7px;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.5),
+
+        0 0 25px
+        rgba(210,140,255,.25);
+
+    transition:
+        transform .4s ease;
+}
+
+.memory-photo img:hover {
+    transform:
+        scale(1.04)
+        rotate(-1deg);
+}
+
+
+/* =========================================================
+   MEMORY TEXT
+========================================================= */
+
+.memory-text {
+    flex: 1;
+
+    max-width: 420px;
+}
+
+.memory-text h2 {
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    color: #ffd6f5;
+
+    font-size:
+        clamp(2rem,5vw,3rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+}
+
+.memory-text p {
+    color: #d3dcff;
+
+    font-size: .95rem;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   NEXT
+========================================================= */
+
+.next-area {
+    text-align: center;
+
+    padding-bottom: 70px;
+}
+
+.next-area p {
+    color: #cbd3ff;
+
+    margin-bottom: 20px;
+}
+
+.next-button {
+    border:
+        1px solid #d89cff;
+
+    background:
+        rgba(180,100,255,.15);
+
+    color: #fff;
+
+    padding:
+        12px 30px;
+
+    border-radius: 30px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+
+    box-shadow:
+        0 0 15px
+        rgba(190,100,255,.3);
+}
+
+.next-button:hover {
+    background: #a95de0;
+
+    transform:
+        scale(1.05);
+
+    box-shadow:
+        0 0 25px
+        rgba(210,120,255,.7);
+}
+
+
+/* =========================================================
+   PAGE 3
+========================================================= */
+
+#page3 {
+    overflow: hidden;
+}
+
+.planet-page {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   PLANET TITLE
+========================================================= */
+
+.planet-title {
+    position: absolute;
+
+    top: 30px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    z-index: 300;
+}
+
+.planet-title p {
+    color: #c4cdf7;
+
+    font-size: .85rem;
+
+    margin-bottom: 5px;
+}
+
+.planet-title h1 {
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(2rem,7vw,3.5rem);
+
+    color: #ffd6f5;
+
+    text-shadow:
+        0 0 15px
+        rgba(230,170,255,.6);
+}
+
+
+/* =========================================================
+   SPACE SCENE
+========================================================= */
+
+.space-scene {
+    position: relative;
+
+    width: 560px;
+    height: 560px;
+
+    perspective: 1200px;
+
+    transform-style:
+        preserve-3d;
+}
+
+
+/* =========================================================
+   PLANET
+   TETAP DIAM
+========================================================= */
+
+.planet {
+    position: absolute;
+
+    width: 185px;
+    height: 185px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    z-index: 20;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #ffdbe7,
+            #ff9dae 20%,
+            #d16bc0 45%,
+            #8656a9 70%,
+            #30204d 100%
+        );
+
+    box-shadow:
+
+        inset
+        -35px
+        -25px
+        50px
+        rgba(0,0,0,.65),
+
+        inset
+        10px
+        8px
+        20px
+        rgba(255,255,255,.2),
+
+        0 0 50px
+        rgba(220,120,220,.55);
+}
+
+
+/* PLANET LIGHT */
+
+.planet-highlight {
+    position: absolute;
+
+    top: 25px;
+    left: 30px;
+
+    width: 65px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.2);
+
+    filter:
+        blur(10px);
+
+    transform:
+        rotate(-25deg);
+}
+
+
+/* =========================================================
+   RING SYSTEM
+
+   Cincin tetap miring.
+   Yang berputar hanya rotasi Z.
+========================================================= */
+
+.ring-system {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(68deg);
+
+    transform-style:
+        preserve-3d;
+
+    z-index: 50;
+
+    animation:
+        ringSpin 12s linear infinite;
+}
+
+
+/* =========================================================
+   RING UTAMA
+========================================================= */
+
+.ring-main {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+
+    border:
+        10px solid
+        rgba(225,190,240,.65);
+
+    box-shadow:
+        0 0 15px
+        rgba(255,255,255,.5),
+
+        0 0 35px
+        rgba(190,130,255,.35);
+}
+
+
+/* RING KEDUA */
+
+.ring-inner {
+    position: absolute;
+
+    width: 90%;
+    height: 90%;
+
+    left: 5%;
+    top: 5%;
+
+    border-radius: 50%;
+
+    border:
+        3px solid
+        rgba(255,225,250,.3);
+}
+
+
+/* =========================================================
+   CINCIN BERPUTAR
+
+   Tidak rotateX lagi.
+   Jadi tidak naik-turun.
+========================================================= */
+
+@keyframes ringSpin {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotateX(68deg)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotateX(68deg)
+            rotateZ(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   FOTO ORBIT
+
+   Foto ditempatkan di keliling cincin.
+========================================================= */
+
+.orbit-photo {
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    padding: 4px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd700,
+            #ffffff,
+            #dda8ff
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(255,215,0,.85);
+
+    overflow: hidden;
+
+    z-index: 100;
+
+    transform-style:
+        preserve-3d;
+}
+
+.orbit-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   POSISI 10 FOTO
+========================================================= */
+
+/* ATAS */
+
+.p1 {
+    left: 50%;
+    top: -35px;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* KANAN ATAS */
+
+.p2 {
+    top: 6%;
+    right: 13%;
+}
+
+
+/* KANAN ATAS 2 */
+
+.p3 {
+    top: 25%;
+    right: -35px;
+}
+
+
+/* KANAN BAWAH 2 */
+
+.p4 {
+    bottom: 25%;
+    right: -35px;
+}
+
+
+/* KANAN BAWAH */
+
+.p5 {
+    bottom: 6%;
+    right: 13%;
+}
+
+
+/* BAWAH */
+
+.p6 {
+    left: 50%;
+    bottom: -35px;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* KIRI BAWAH */
+
+.p7 {
+    bottom: 6%;
+    left: 13%;
+}
+
+
+/* KIRI BAWAH 2 */
+
+.p8 {
+    bottom: 25%;
+    left: -35px;
+}
+
+
+/* KIRI ATAS 2 */
+
+.p9 {
+    top: 25%;
+    left: -35px;
+}
+
+
+/* KIRI ATAS */
+
+.p10 {
+    top: 6%;
+    left: 13%;
+}
+
+
+/* =========================================================
+   FOTO IKUT ROTASI CINCIN
+========================================================= */
+
+.ring-system .orbit-photo {
+    animation:
+        photoSpin 12s linear infinite;
+}
+
+
+/*
+   Foto melawan rotasi supaya foto
+   tidak ikut miring/terbalik terus.
+*/
+
+@keyframes photoSpin {
+
+    from {
+        transform:
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            rotateZ(-360deg);
+    }
+
+}
+
+
+/* =========================================================
+   LAST MESSAGE
+========================================================= */
+
+.last-message {
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    z-index: 300;
+}
+
+.last-message p {
+    color: #cbd3ff;
+
+    font-size: .85rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .moon {
+        width: 55px;
+        height: 55px;
+
+        top: 5%;
+        right: 7%;
+    }
+
+
+    /* PAGE 1 */
+
+    .envelope {
+        width: 250px;
+        height: 170px;
+    }
+
+
+    /* PAGE 2 */
+
+    #page2 {
+        padding:
+            60px 15px 80px;
+    }
+
+    .page-title {
+        margin-bottom: 70px;
+    }
+
+
+    .memory-row,
+    .memory-row.left,
+    .memory-row.right {
+
+        flex-direction: column;
+
+        gap: 30px;
+
+        margin-bottom: 90px;
+
+        text-align: center;
+    }
+
+
+    .memory-photo {
+        width: 85%;
+
+        max-width: 350px;
+    }
+
+
+    .memory-text {
+        width: 90%;
+    }
+
+
+    /* PAGE 3 */
+
+    .space-scene {
+        width: 400px;
+        height: 400px;
+    }
+
+
+    .planet {
+        width: 135px;
+        height: 135px;
+    }
+
+
+    .ring-system {
+        width: 360px;
+        height: 360px;
+    }
+
+
+    .orbit-photo {
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .p1 {
+        top: -26px;
+    }
+
+    .p3,
+    .p8,
+    .p9 {
+        left: -26px;
+    }
+
+    .p4,
+    .p3 {
+        right: -26px;
+    }
+
+    .p6 {
+        bottom: -26px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .opening h1 {
+        font-size: 2.3rem;
+    }
+
+
+    .envelope {
+        width: 220px;
+        height: 150px;
+    }
+
+
+    .photo-inside {
+        width: 125px;
+        height: 145px;
+    }
+
+
+    .space-scene {
+        width: 330px;
+        height: 330px;
+    }
+
+
+    .planet {
+        width: 110px;
+        height: 110px;
+    }
+
+
+    .ring-system {
+        width: 300px;
+        height: 300px;
+    }
+
+
+    .orbit-photo {
+        width: 43px;
+        height: 43px;
+    }
+
+
+    .p1 {
+        top: -22px;
+    }
+
+    .p6 {
+        bottom: -22px;
+    }
+
+    .p3,
+    .p8,
+    .p9 {
+        left: -22px;
+    }
+
+    .p4 {
+        right: -22px;
+    }
+
+}
